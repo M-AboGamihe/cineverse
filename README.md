@@ -1,126 +1,121 @@
-# 🎬 CineVerse — Movie Discovery App
+# CineVerse
 
-<p align="center">
-  <img src="assets/icons/app_icon.png" width="120" />
-</p>
+**CineVerse** is a Flutter movie-discovery app (package name: `movie_app`) built with **Clean Architecture**, **BLoC**, and integrations for **The Movie Database (TMDB)**, **Firebase Auth**, **Cloud Firestore**, and local caching via **Hive**.
 
-<p align="center">
-  <b>CineVerse</b> — A modern movie discovery app built with Flutter using Clean Architecture, BLoC, Firebase, and TMDB API.
-</p>
+Display name on devices: **CineVerse**. The repository uses the standard Flutter package layout under `lib/`.
 
----
+## Features
 
-## 🚀 Features
+- Splash screen with full-screen artwork, then navigation to the home experience
+- Popular movies with pull-to-refresh and infinite scroll
+- Movie details, similar titles, and trailer links where available
+- Search (via `SearchDelegate`)
+- Favorites backed by Firestore and local persistence
+- Firebase email/password authentication (register / login / logout)
+- Dark UI theme aligned with the CineVerse brand
 
-- 🎬 Browse trending & popular movies (TMDB API)
-- 🔍 Search movies instantly
-- ❤️ Add/remove favorites
-- 👤 Firebase Authentication (Login/Register)
-- ☁️ Cloud Firestore integration
-- 🧠 Clean Architecture (scalable & maintainable)
-- ⚡ BLoC state management
-- 📦 Local caching with Hive
-- 🖼️ Cached Network Images for performance
-- 📱 Responsive UI for Android & iOS
+## Architecture
 
----
+| Layer        | Role |
+|-------------|------|
+| **Domain**  | Entities, repository contracts, use cases |
+| **Data**    | Remote (Dio + TMDB), local (Hive), repository implementations |
+| **Presentation** | Screens, widgets, BLoCs |
 
-## 🎬 Demo
+Dependency injection is centralized in `lib/injection_container.dart`.
 
-### ▶️ Video Demo
+## Prerequisites
 
-<video width="100%" controls>
-  <source src="https://raw.githubusercontent.com/M-AboGamihe/movie_app/main/assets/demo/app_demo.mp4" type="video/mp4">
-</video>
+- [Flutter](https://docs.flutter.dev/get-started/install) (SDK constraint in `pubspec.yaml`, currently `^3.11.5`)
+- A [TMDB](https://www.themoviedb.org/) API v3 key
+- A [Firebase](https://firebase.google.com/) project with **Authentication** (email/password) and **Cloud Firestore** enabled, and platform apps configured (Android / iOS / Web as needed)
 
-> If video does not work in GitHub preview, use GIF or YouTube link.
+## Configuration
 
----
+### TMDB API key (required)
 
-## 📸 Screenshots
+The app does **not** ship with a TMDB key in source. Pass it at compile time:
 
-<p align="center">
-  <img src="assets/app_images/1.png" width="200"/>
-  <img src="assets/app_images/2.png" width="200"/>
-  <img src="assets/app_images/3.png" width="200"/>
-</p>
+```bash
+flutter run --dart-define=TMDB_API_KEY=YOUR_TMDB_KEY
+```
 
----
+For release builds:
 
-## 🧱 Architecture
+```bash
+flutter build apk --dart-define=TMDB_API_KEY=YOUR_TMDB_KEY
+```
 
-This project follows Clean Architecture:
+See also `.env.example` for a short reminder (this project uses `--dart-define`, not runtime `.env` loading by default).
 
+### Firebase
 
+1. Create a Firebase project and register your app(s).
+2. Place `google-services.json` under `android/app/` (Android).
+3. Configure iOS as per Firebase docs (`GoogleService-Info.plist` in `ios/Runner/`).
+4. Regenerate `lib/firebase_options.dart` with the FlutterFire CLI if you change projects:
 
+   ```bash
+   dart pub global activate flutterfire_cli
+   flutterfire configure
+   ```
 
+Do **not** commit private signing keys or `key.properties` with secrets. Those paths are listed in `.gitignore`.
 
+### App launcher icons
 
+Icons are generated from `assets/icons/app_icon.png` using [flutter_launcher_icons](https://pub.dev/packages/flutter_launcher_icons). After changing the source image:
 
+```bash
+dart run flutter_launcher_icons
+```
 
-### Layers:
+## Getting started
 
-- Presentation Layer (UI + BLoC)
-- Domain Layer (Use Cases + Entities)
-- Data Layer (Repositories + API + Models)
-
----
-
-## 🛠️ Tech Stack
-
-- Flutter
-- Dart
-- Firebase (Auth + Firestore)
-- TMDB API
-- BLoC (State Management)
-- Hive (Local Storage)
-- Dio (Networking)
-- GetIt (Dependency Injection)
-- Shared Preferences
-- Cached Network Image
-
----
-
-## 📦 Dependencies
-
-```yaml
-flutter_bloc: ^9.1.1
-equatable: ^2.0.8
-dio: ^5.9.2
-firebase_core: ^4.7.0
-firebase_auth: ^6.4.0
-cloud_firestore: ^6.3.0
-hive: ^2.2.3
-hive_flutter: ^1.1.0
-shared_preferences: ^2.5.5
-cached_network_image: ^3.4.1
-youtube_player_flutter: ^9.1.3
-url_launcher: ^6.3.2
-rxdart: ^0.28.0
-bloc_concurrency: ^0.3.0
-get_it: ^9.2.1
-dartz: ^0.10.1
-
-
-
-
-
-
-
-
-
-
-
-
-
-# Clone repository
-git clone https://github.com/M-AboGamihe/movie_app.git
-
-# Navigate to project
+```bash
+git clone https://github.com/MahmoudAbogamihe/movie_app.git
 cd movie_app
-
-# Install dependencies
 flutter pub get
+flutter run --dart-define=TMDB_API_KEY=YOUR_TMDB_KEY
+```
 
-# Run application
-flutter run
+### Code generation (Hive adapters)
+
+If you add Hive type adapters with codegen:
+
+```bash
+dart run build_runner build --delete-conflicting-outputs
+```
+
+## Project layout (high level)
+
+```
+lib/
+  core/           # Theme, constants, network, shared widgets
+  features/
+    authentication/
+    movies/
+  firebase_options.dart
+  injection_container.dart
+  main.dart
+assets/
+  icons/          # Launcher icon source
+  splash/         # In-app splash image
+```
+
+## Scripts and quality
+
+```bash
+flutter analyze
+flutter test
+```
+
+## Security notes for public GitHub repos
+
+- Never commit TMDB keys or Firebase server secrets in plain text.
+- `ApiConstants.apiKey` is supplied only via `String.fromEnvironment('TMDB_API_KEY')`.
+- Restrict Firebase API keys in the Google Cloud console where possible.
+
+## License
+
+This project is licensed under the MIT License — see [LICENSE](LICENSE).
