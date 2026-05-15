@@ -1,4 +1,5 @@
 <div align="center">
+  <img src="assets\icons\app_icon.png" alt="ShiftWatch Logo" width="150">
 
 # 🎬 CineVerse
 
@@ -35,18 +36,15 @@ With a beautiful dark UI theme, smooth animations, and a responsive layout, Cine
 
 ## 📱 Screenshots
 
-<div align="center">
-  <img src="assets/app_images/images/Movies Screen.jpg" width="24%" />
-  <img src="assets/app_images/images/Movie Details Screen.jpg" width="24%" />
-  <img src="assets/app_images/images/Search Screen.jpg" width="24%" />
-  <img src="assets/app_images/images/Favorites Screen.jpg" width="24%" />
-</div>
-<br>
-<div align="center">
-  <img src="assets/app_images/images/Login Screan.jpeg" width="24%" />
-  <img src="assets/app_images/images/Register Screen.jpeg" width="24%" />
-  <img src="assets/app_images/images/App Drawer.jpg" width="24%" />
-</div>
+
+
+| Login | Sign Up | Setup Overview |
+| :---: | :---: | :---: |
+| <img src="assets\images\Login.png" width="220"> | <img src="assets\images\Register.png" width="220"> | <img src="assets\images\App_Drawer.jpg" width="220"> |
+
+| Movies Screen | Movie Details | Search Screen | Favorites Screen |
+| :---: | :---: | :---: | :---: |
+| <img src="assets\images\Movies.png" width="220"> | <img src="assets\images\Movie_Details.png" width="220"> | <img src="assets\images\Search.jpg" width="220"> | <img src="assets\images\Favorites.jpg" width="220"> |
 
 ## 🎥 App Demonstration
 
