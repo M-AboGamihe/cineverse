@@ -2,7 +2,16 @@
 <div align="center">
   <img src="assets/icons/app_icon.png" alt="ShiftWatch Logo" width="150">
 
-# 🎬 CineVerse
+## 🎥 App Demonstration
+
+Check out the full app experience in our demo video:
+
+<div align="center">
+  👉 [Watch Demo Video]( https://drive.google.com/file/d/1kz6fd18Q281eoRcXnpSXHcswuMT7N_JU/view?usp=drive_link )
+  
+</div>
+
+# 🎬 CineVerse                             
 
 **A beautifully designed, feature-rich Flutter application for movie discovery.**
 
@@ -38,7 +47,6 @@ With a beautiful dark UI theme, smooth animations, and a responsive layout, Cine
 ## 📱 Screenshots
 
 
-
 | Login | Sign Up | App Drawer |
 | :---: | :---: | :---: | 
 | <img src="assets/images/Login.jpeg" width="220"> | <img src="assets/images/Register.jpeg" width="220"> | <img src="assets/images/App_Drawer.jpg" width="220"> |
@@ -47,14 +55,6 @@ With a beautiful dark UI theme, smooth animations, and a responsive layout, Cine
 | :---: | :---: | :---: | :---: |
 | <img src="assets/images/Movies.jpg" width="220"> | <img src="assets/images/Movie_Details.jpg" width="220"> | <img src="assets/images/Search.jpg" width="220"> | <img src="assets/images/Favorites.jpg" width="220"> |
 
-## 🎥 App Demonstration
-
-Check out the full app experience in our demo video:
-
-<div align="center">
-  👉 [Watch Demo Video](assets/demo/app_demo.mp4.mp4)
-  
-</div>
 
 ## 🏗️ Architecture
 
