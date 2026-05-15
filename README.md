@@ -41,11 +41,11 @@ With a beautiful dark UI theme, smooth animations, and a responsive layout, Cine
 
 | Login | Sign Up | splash | App Drawer |
 | :---: | :---: | :---: | :---: |
-| <img src="assets/images/Login.png" width="220"> | <img src="assets/images/Register.png" width="220"> | <img src="assets/splash/startup_splash.jpg" width="220"> | <img src="assets/images/App_Drawer.jpg" width="220"> |
+| <img src="assets/images/Login.jpeg" width="220"> | <img src="assets/images/Register.jpeg" width="220"> | <img src="assets/splash/startup_splash.jpg" width="220"> | <img src="assets/images/App_Drawer.jpg" width="220"> |
 
 | Movies Screen | Movie Details | Search Screen | Favorites Screen |
 | :---: | :---: | :---: | :---: |
-| <img src="assets/images/Movies.png" width="220"> | <img src="assets/images/Movie_Details.png" width="220"> | <img src="assets/images/Search.jpg" width="220"> | <img src="assets/images/Favorites.jpg" width="220"> |
+| <img src="assets/images/Movies.jpg" width="220"> | <img src="assets/images/Movie_Details.jpg" width="220"> | <img src="assets/images/Search.jpg" width="220"> | <img src="assets/images/Favorites.jpg" width="220"> |
 
 ## 🎥 App Demonstration
 
@@ -155,6 +155,3 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <div align="center">
   <b>Built with ❤️ using Flutter</b>
 </div>
-=======
-
->>>>>>> 92934b65f5ef83f04753854b994d8a14c9bda73e
