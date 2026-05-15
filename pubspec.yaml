@@ -67,7 +67,7 @@ flutter:
   assets:
     - assets/splash/startup_splash.png
     - assets/demo/app_demo.mp4
-    - assets/app_images/
+    - assets/images/
 
 flutter_launcher_icons:
   android: true
