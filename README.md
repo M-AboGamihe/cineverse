@@ -39,9 +39,9 @@ With a beautiful dark UI theme, smooth animations, and a responsive layout, Cine
 
 
 
-| Login | Sign Up | splash | App Drawer |
+| Login | Sign Up | App Drawer |
 | :---: | :---: | :---: | :---: |
-| <img src="assets/images/Login.jpeg" width="220"> | <img src="assets/images/Register.jpeg" width="220"> | <img src="assets/splash/startup_splash.jpg" width="220"> | <img src="assets/images/App_Drawer.jpg" width="220"> |
+| <img src="assets/images/Login.jpeg" width="220"> | <img src="assets/images/Register.jpeg" width="220"> | <img src="assets/images/App_Drawer.jpg" width="220"> |
 
 | Movies Screen | Movie Details | Search Screen | Favorites Screen |
 | :---: | :---: | :---: | :---: |
