@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div align="center">
   <img src="assets/icons/app_icon.png" alt="ShiftWatch Logo" width="150">
 
@@ -154,3 +155,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <div align="center">
   <b>Built with ❤️ using Flutter</b>
 </div>
+=======
+
+>>>>>>> 92934b65f5ef83f04753854b994d8a14c9bda73e
